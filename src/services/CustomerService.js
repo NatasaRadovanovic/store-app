@@ -40,6 +40,11 @@ class CustomerService{
         customers.push(newCustomer);
         nextId++;
     }
+
+    find(id){
+        
+        return customers.find(customer => customer.id == id);
+    }
 }
 
 export const customerService = new CustomerService;

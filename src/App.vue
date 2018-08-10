@@ -21,6 +21,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import AppCustomers from './components/AppCustomers.vue'
 import AppProducts from './components/AppProducts.vue'
+import LatestPurchases from './components/LatestPurchases.vue'
 
 
 export default {
@@ -28,7 +29,8 @@ export default {
   components: {
     HelloWorld,
     AppCustomers,
-    AppProducts
+    AppProducts,
+    LatestPurchases
   }
 }
 </script>

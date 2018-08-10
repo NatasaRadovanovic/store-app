@@ -25,6 +25,10 @@
       <td>{{ customer.name }}</td>
       <td>{{ customer.email }}</td>
       <button @click = "deleteCustomer(customer)" type="button" class="btn btn-danger btn-sm">Delete</button>
+      <span>
+        <router-link :to="{name:'LatestPurchases',params: {id:customer.id}}" class="btn">Latest Purchases</router-link>
+      </span>
+      
     </tr>
   </tbody>
 </table>
@@ -40,7 +44,7 @@ export default {
   data(){
       return{
           customers: customerService.list(),
-          newCustomer:{}
+          newCustomer:{ product:[] }
       }
   },
 
@@ -53,7 +57,7 @@ export default {
     addCustomer()
     {
         customerService.addNewCustomer(this.newCustomer);
-        this.newCustomer = {};
+        this.newCustomer = { product:[]};
     }
   }
 }
