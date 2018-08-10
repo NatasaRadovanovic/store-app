@@ -1,13 +1,12 @@
 <template>
   <div>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Store App <i class="fas fa-shopping-cart"></i></a>
+  <a class="navbar-brand" href="#">Store App <i class="fas fa-shopping-cart"></i> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
        <router-link to="/customers" class="nav-item nav-link">Customers</router-link>
        <router-link to="/products" class="nav-item nav-link">Products</router-link>
     </div>
