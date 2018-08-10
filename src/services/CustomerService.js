@@ -33,6 +33,13 @@ class CustomerService{
         let indexOfCustomerToDelete = customers.indexOf(customer);
         customers.splice(indexOfCustomerToDelete, 1);
     }
+
+    addNewCustomer(newCustomer)
+    {
+        newCustomer.id = nextId;    
+        customers.push(newCustomer);
+        nextId++;
+    }
 }
 
 export const customerService = new CustomerService;
