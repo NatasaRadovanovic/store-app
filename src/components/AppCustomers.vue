@@ -3,8 +3,12 @@
     <h3>Add Customers</h3><br>
     <form @submit.prevent class="wrappForm">
   <div class="form-group">
-    <label for="name">Name</label>
-    <input v-model="newCustomer.name" type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter name">
+    <label for="firstName">First Name</label>
+    <input v-model="newCustomer.firstName" type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="Enter name">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input v-model="newCustomer.lastName" type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Enter last name">
   </div>
   <div class="form-group">
     <label for="name">Email</label>
@@ -16,13 +20,15 @@
  <table class="table">
   <thead>
     <tr>
-      <th scope="col">Name</th>
+      <th scope="col">First Name</th>
+       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
     </tr>
   </thead>
   <tbody>
     <tr v-for="(customer, key) in customers" :key="key">
-      <td>{{ customer.name }}</td>
+      <td>{{ customer.firstName }}</td>
+      <td>{{ customer.lastName }}</td>
       <td>{{ customer.email }}</td>
       <button @click = "deleteCustomer(customer)" type="button" class="btn btn-danger btn-sm">Delete</button>
       <span>

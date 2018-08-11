@@ -5,13 +5,15 @@
    <table class="table">
   <thead>
     <tr>
-      <th scope="col">Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
       <th scope="col">Email</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>{{ customer.name }}</td>
+      <td>{{ customer.firstName }}</td>
+      <td>{{ customer.lastName }}</td>
       <td>{{ customer.email }}</td>
     </tr>
   </tbody>

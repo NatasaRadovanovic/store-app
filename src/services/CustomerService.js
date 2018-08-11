@@ -1,21 +1,24 @@
 const customers = [
     {
         id: 1,
-        name: "John",
+        firstName: "John",
+        lastName:"Doe",
         email: "john@gmail.com",
         products: []
     },
 
     {
         id: 2,
-        name: "Jack",
+        firstName: "Jack",
+        lastName:"Junior",
         email: "jack@gmail.com",
         products: []
     },
 
     {
         id: 3,
-        name: "Emily",
+        firstName: "Emily",
+        lastName:"Smith",
         email: "emily@gmail.com",
         products: []
     }
