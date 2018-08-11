@@ -13,25 +13,12 @@
   </div>
 </nav>
 <router-view></router-view>
-
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import AppCustomers from './components/AppCustomers.vue'
-import AppProducts from './components/AppProducts.vue'
-import LatestPurchases from './components/LatestPurchases.vue'
-
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld,
-    AppCustomers,
-    AppProducts,
-    LatestPurchases
-  }
 }
 </script>
 

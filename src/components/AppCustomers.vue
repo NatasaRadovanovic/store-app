@@ -27,13 +27,16 @@
   </thead>
   <tbody>
     <tr v-for="(customer, key) in customers" :key="key">
-      <td>{{ customer.firstName }}</td>
+      <td>
+        <i class="fas fa-user-alt"></i>{{ customer.firstName }}
+      </td>
       <td>{{ customer.lastName }}</td>
-      <td>{{ customer.email }}</td>
-      <button @click = "deleteCustomer(customer)" type="button" class="btn btn-danger btn-sm">Delete</button>
+      <td>
+        <i class="fas fa-envelope-square"></i>{{ customer.email }}
+      </td>
+      <button @click = "deleteCustomer(customer)" type="button" class="btn btn-danger delete btn-sm">Delete</button>
       <span>
-        <router-link :to="{name:'LatestPurchases',params: {id:customer.id}}" 
-        class="btn">Latest Purchases</router-link>
+        <router-link :to="{name:'LatestPurchases',params: {id:customer.id}}">Latest Purchases</router-link>
       </span>
       
     </tr>
@@ -51,7 +54,7 @@ export default {
   data(){
       return{
           customers: customerService.list(),
-          newCustomer:{ product:[] }
+          newCustomer:{ products:[] }
       }
   },
 
@@ -64,11 +67,9 @@ export default {
     addCustomer()
     {
         customerService.addNewCustomer(this.newCustomer);
-        this.newCustomer = { product:[]};
-    }
+        this.newCustomer = { products:[]};
+     }
   }
-
-  
 }
 
 </script>
@@ -88,5 +89,8 @@ export default {
 .wrappForm{
     width:35%;
     margin:0 auto;
+}
+.btn-danger{
+  margin-right:10px;
 }
 </style>

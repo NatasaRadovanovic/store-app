@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import AppCustomers from './components/AppCustomers.vue';
 import AppProducts from './components/AppProducts.vue';
 import LatestPurchases from './components/LatestPurchases.vue';
+import BuyProduct from './components/BuyProduct.vue';
 
 
 
@@ -15,6 +16,8 @@ export default new Router({
         {path: '/', redirect: 'customers'},
         {path: '/customers', component: AppCustomers},
         {path: '/products', component: AppProducts},
-        {path: '/customers/:id', component: LatestPurchases, name:"LatestPurchases", props: true}
+        {path: '/customers/:id', component: LatestPurchases, name:"LatestPurchases", props: true},
+        {path: '/products/:id', component: BuyProduct, name:"buyProduct", props: true}
+
       ]
 })

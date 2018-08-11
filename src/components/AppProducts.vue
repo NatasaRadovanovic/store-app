@@ -4,7 +4,7 @@
 
     <i class="fas fa-search"></i> <input v-model="search" class="search" type="text" placeholder="Search products">
 
-    <table class="table">
+<table class="table">
   <thead>
     <tr>
       <th scope="col">Title</th>
@@ -16,8 +16,11 @@
       <td>{{ product.title }}</td>
       <td>{{ product.quantity }}</td>
       <button @click="incrementQuantity(product)" type="button" class="btn btn-success btn-sm">+</button>
-      <button @click="decrementQuantity(product)" type="button" class="btn btn-danger btn-sm">-</button>
-
+      <button @click="decrementQuantity(product)" type="button" class="btn btn-danger btn-plus btn-sm">-</button>
+      <span>
+        <router-link :to="{name:'buyProduct',params: {id:product.id}}">
+          <i class="fas fa-shopping-cart"></i>Buy</router-link>
+      </span>
     </tr>
   </tbody>
 </table>
@@ -29,8 +32,7 @@
 import { productService } from  '../services/ProductService.js';
 
 export default {
-  name: 'AppProducts',
-
+  name: 'AppProducts',  
   data(){
     return{
       products:productService.list(),
@@ -84,7 +86,7 @@ export default {
   margin-top:20px;
 }
 
-.btn-success, .btn-danger{
+.btn-success, .btn-plus{
   width:30px;
   height:30px;
   margin-right:5px;

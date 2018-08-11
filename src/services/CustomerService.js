@@ -39,14 +39,18 @@ class CustomerService{
 
     addNewCustomer(newCustomer)
     {
-        newCustomer.id = nextId;    
+        newCustomer.id = nextId;   
         customers.push(newCustomer);
         nextId++;
     }
 
-    find(id){
-        
+    find(id)
+    {
         return customers.find(customer => customer.id == id);
+    }
+
+    addProduct(customer, product) {
+        customer.products.push(product);
     }
 }
 

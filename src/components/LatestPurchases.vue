@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <h1>Latest Purchases</h1><br>
-    <router-link to="/customers" class="nav-item nav-link">Back</router-link>
+    <h3>Latest Purchases</h3><br>
+  
+  <button class="btn btn-danger btn-sm" >
+    <router-link to="/customers"><span>Back</span></router-link>
+  </button>
+   
    <table class="table">
   <thead>
     <tr>
@@ -12,16 +16,22 @@
   </thead>
   <tbody>
     <tr>
-      <td>{{ customer.firstName }}</td>
+      <td>
+        <i class="fas fa-user-alt"></i>{{ customer.firstName }}
+     </td>
       <td>{{ customer.lastName }}</td>
-      <td>{{ customer.email }}</td>
+      <td>
+        <i class="fas fa-envelope-square"></i>{{ customer.email }}</td>
     </tr>
   </tbody>
 </table><br>
 
-<h5>Customer product</h5><br>
+<h5>
+  <i class="fas fa-cart-arrow-down"></i> Customer product
+</h5><br>
+
 <ul class="list-group" v-for=" product in customer.products" :key="product.id">
-  <li class="list-group-item">{{ product.name }}</li>
+  <li class="list-group-item">{{ product.title }}</li>
 </ul>
   </div>
 </template>
@@ -39,7 +49,7 @@ export default {
        
       }
   },
-        created(){ //Lifecycle Hooks ne ide u methods, ova fji je jedna od prvih koja se okida
+  created(){ //Lifecycle Hooks ne ide u methods, ova fji je jedna od prvih koja se okida
         //prvo moramo da ga dovucemo
             this.customer = customerService.find(this.id);
         }
@@ -54,5 +64,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+ span{
+   color:white;
 }
 </style>
