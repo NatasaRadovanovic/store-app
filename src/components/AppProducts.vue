@@ -2,7 +2,7 @@
   <div id="app">
     <h3>List of products</h3><br>
 
-    <i class="fas fa-search"></i><input v-model="search" class="search" type="text" placeholder="Search products">
+    <i class="fas fa-search"></i> <input v-model="search" class="search" type="text" placeholder="Search products">
 
     <table class="table">
   <thead>
@@ -14,7 +14,10 @@
   <tbody>
     <tr v-for="(product, key) in filteredProduct" :key="key">
       <td>{{ product.title }}</td>
-      <td>{{ product.quantity }}</td> 
+      <td>{{ product.quantity }}</td>
+      <button @click="incrementQuantity(product)" type="button" class="btn btn-success btn-sm">+</button>
+      <button @click="decrementQuantity(product)" type="button" class="btn btn-danger btn-sm">-</button>
+
     </tr>
   </tbody>
 </table>
@@ -35,6 +38,15 @@ export default {
     }
   },
 
+  methods:{
+    incrementQuantity(product){
+      productService.increment(product);
+    },
+
+    decrementQuantity(product){
+      productService.decrement(product);
+    },
+  },
   computed:{
     filteredProduct:function(){
       return this.products.filter((product)=>{
@@ -44,6 +56,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style>
@@ -56,10 +69,25 @@ export default {
   margin-top: 60px;
 }
 
-.search, .search-button{
+.search{
   border-radius:5px;
   padding:5px;
   margin-bottom:20px;
+}
+.fas{
+  padding:10px;
+}
+
+.table{
+  width:70%;
+  margin:0 auto;
+  margin-top:20px;
+}
+
+.btn-success, .btn-danger{
+  width:30px;
+  height:30px;
+  margin-right:5px;
 }
 
 </style>

@@ -32,7 +32,8 @@
       <td>{{ customer.email }}</td>
       <button @click = "deleteCustomer(customer)" type="button" class="btn btn-danger btn-sm">Delete</button>
       <span>
-        <router-link :to="{name:'LatestPurchases',params: {id:customer.id}}" class="btn">Latest Purchases</router-link>
+        <router-link :to="{name:'LatestPurchases',params: {id:customer.id}}" 
+        class="btn">Latest Purchases</router-link>
       </span>
       
     </tr>
@@ -66,7 +67,10 @@ export default {
         this.newCustomer = { product:[]};
     }
   }
+
+  
 }
+
 </script>
 
 
@@ -82,7 +86,7 @@ export default {
 }
 
 .wrappForm{
-    width:40%;
+    width:35%;
     margin:0 auto;
 }
 </style>

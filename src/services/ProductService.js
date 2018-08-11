@@ -17,9 +17,24 @@ const products = [
 
 ];
 
+let nextIdProduct = 4;   
+
 class ProductService {
     list(){
         return products;
+    }
+
+    increment(product){
+        return product.quantity++;
+    }
+
+    decrement(product){
+        if(!product.quantity <= 0){
+            return product.quantity--;
+        }else{
+            alert('There are no more products in stock!')
+        }
+       
     }
 
     
