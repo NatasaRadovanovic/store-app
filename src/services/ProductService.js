@@ -21,6 +21,8 @@ class ProductService {
     list(){
         return products;
     }
+
+    
 }
 
 export const productService = new ProductService;
